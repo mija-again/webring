@@ -1,9 +1,8 @@
 {% set r = 170 %}
-{% set ri = 75 %}
+{% set ri = 100 %}
 {% set w = 600 %}
 {% set h = 440 %}
 {% set nodes = members|mapNodes(r, w, h) %}
-
 <svg class="map {% if members|length > 10 %}map--dense{% endif %}" width="{{ w }}" height="{{ h }}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <circle cx="{{ w/2 }}" cy="{{ h/2 }}" r="{{ r }}" class="map__circle"></circle>
 
