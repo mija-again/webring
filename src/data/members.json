@@ -1,7 +1,12 @@
 [
-    {
-        "title": "Mija’s Room",
-        "url": "https://mijasroom.net/",
-        "feed": "https://mijasroom.net/feed/"
-    }
+  {
+    "title": "Mija’s Room",
+    "url": "https://mijasroom.net/",
+    "feed": "https://mijasroom.net/feed/"
+  },
+  {
+    "title": "Oaks and Pines",
+    "url": "https://oaks-and-pines.com/",
+    "feed": "https://oaks-and-pines.com/feed/"
+  }
 ]
