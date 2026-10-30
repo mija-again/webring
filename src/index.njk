@@ -6,42 +6,61 @@ layout: base
 
 <div class="markdown">
     <h2>What's this?</h2>
+
     <p>
-        A community of sites around a common topic, also known as a <a href="https://en.wikipedia.org/wiki/Webring">webring</a>. 
-        Each member includes a badge on their site that links to the previous and next sites in the ring. 
-        Kids in the 90s used to love it!
+        The Spankscuary Webring is a hand-built neighbourhood for spanking stories,
+        art, history, humour, blogs, archives, and community. It connects independently
+        owned sites so readers can move from one to another without relying on search
+        engines, social media feeds, or recommendation algorithms.
+    </p>
+
+    <p>
+        Webrings are an old idea we're bringing back because they still solve a useful
+        problem. Each member site links to the ring, making it possible to discover
+        other sites through people rather than platforms.
     </p>
 
     <h2>How to join</h2>
+
     <p>
-        To join the webring, <a href="{{ meta.repo }}/compare">open a pull request</a> 
-        and supply the name and URL of your site. If you publish a RSS feed, you can provide that as well.
-    </p>
-    <p>
-        If you don't have a Github account, you can also use this form to sign up. 
-        The webring admins will then look at your site and handle your request.
+        Spankscuary is for independently maintained sites with substantial spanking-related
+        content. Personal sites, blogs, story archives, art sites, history projects, and
+        other community resources are all welcome.
     </p>
 
-    {% include 'signupform.njk' %}
+    <p>
+        If you have a GitHub account, you can
+        <a href="{{ meta.repo }}/compare">open a pull request</a>
+        with the name and URL of your site. If your site has an RSS or Atom feed,
+        please include that too.
+    </p>
+
+    <p>
+        Don't use GitHub? That's fine. We'll add another way to request membership shortly.
+    </p>
 
     <h2>Add the banner</h2>
+
     <p>
-        Once you've joined the ring, copy this code snippet into your site:
+        Once your site has joined the ring, add this code to your site:
     </p>
 
     {% highlight 'html' %}{% include 'snippet.njk' %}{% endhighlight %}
 
     <p>
-        It will render this banner that links to the other members:
+        It will display the Spankscuary navigation banner linking your site to its
+        neighbours in the ring:
     </p>
 
     {% include 'snippet.njk' %}
 
-    <h2>Want to host your own webring?</h2>
+    <h2>Build your own</h2>
+
     <p>
-        If you want to start your own webring, fork 
-        <a href="https://github.com/maxboeck/webring">this project</a> on Github 
-        and follow the instructions in the README.
+        Spankscuary is built from
+        <a href="https://github.com/maxboeck/webring">Max Böck's Webring Starter Kit</a>.
+        If you'd like to build a webring of your own, you can fork the original project
+        and make it yours.
     </p>
 
     {% include 'github.njk' %}
