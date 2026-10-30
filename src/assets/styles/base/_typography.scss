@@ -5,35 +5,45 @@ h4,
 h5,
 h6 {
     margin: 0;
-    line-height: 1.3;
+    font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, Georgia, serif;
+    line-height: 1.25;
+    color: #4f2d2f;
 }
 
 h1,
 .h1 {
-    font-size: 2rem;
+    font-size: 2.25rem;
+    font-weight: 700;
     text-rendering: optimizeLegibility;
 }
 
 h2,
 .h2 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: 700;
 }
 
 h3,
 .h3 {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     font-weight: 700;
 }
 
+body {
+    font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, Georgia, serif;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #2f2a27;
+}
+
 a {
-    color: $brand-primary;
+    color: #6f2f38;
     font-weight: 500;
     text-decoration: none;
 
     &:hover,
     &:focus {
-        color: darken($brand-primary, 10%);
+        color: #8f4650;
         text-decoration: underline;
     }
 }
