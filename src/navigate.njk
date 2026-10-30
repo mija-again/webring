@@ -1,0 +1,118 @@
+---
+permalink: '/navigate/index.html'
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Travelling through {{ meta.title }}</title>
+</head>
+
+<body>
+    <main>
+        <h1>Travelling through {{ meta.title }}</h1>
+
+        <p id="status">
+            Finding the next stop in the ring…
+        </p>
+
+        <div id="webring-members" hidden>
+            {% for member in members %}
+                <a href="{{ member.url }}">{{ member.title }}</a>
+            {% endfor %}
+        </div>
+
+        <p id="fallback" hidden>
+            <a href="{{ meta.url }}">Return to {{ meta.title }}</a>
+        </p>
+    </main>
+
+    <script>
+        (function () {
+            const status = document.getElementById('status');
+            const fallback = document.getElementById('fallback');
+
+            const memberLinks = Array.from(
+                document.querySelectorAll('#webring-members a')
+            );
+
+            const members = memberLinks.map(link => ({
+                title: link.textContent.trim(),
+                url: link.href,
+                host: new URL(link.href).hostname
+                    .replace(/^www\./, '')
+                    .toLowerCase()
+            }));
+
+            const params = new URLSearchParams(window.location.search);
+
+            const action = params.get('action') || 'random';
+
+            const currentHost = (params.get('site') || '')
+                .replace(/^www\./, '')
+                .toLowerCase();
+
+            if (members.length === 0) {
+                status.textContent = 'There are no sites in the ring yet.';
+                fallback.hidden = false;
+                return;
+            }
+
+            let currentIndex = members.findIndex(
+                member => member.host === currentHost
+            );
+
+            let target;
+
+            if (action === 'random') {
+                let choices = members;
+
+                if (members.length > 1 && currentIndex !== -1) {
+                    choices = members.filter(
+                        (_, index) => index !== currentIndex
+                    );
+                }
+
+                target = choices[
+                    Math.floor(Math.random() * choices.length)
+                ];
+            }
+
+            else if (action === 'prev') {
+                if (currentIndex === -1) {
+                    target = members[members.length - 1];
+                } else {
+                    const previousIndex =
+                        (currentIndex - 1 + members.length) % members.length;
+
+                    target = members[previousIndex];
+                }
+            }
+
+            else if (action === 'next') {
+                if (currentIndex === -1) {
+                    target = members[0];
+                } else {
+                    const nextIndex =
+                        (currentIndex + 1) % members.length;
+
+                    target = members[nextIndex];
+                }
+            }
+
+            else {
+                status.textContent = 'That direction is not part of the ring.';
+                fallback.hidden = false;
+                return;
+            }
+
+            status.textContent = 'Taking you to ' + target.title + '…';
+
+            window.location.replace(target.url);
+        })();
+    </script>
+</body>
+</html>
