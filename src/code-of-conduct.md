@@ -11,9 +11,9 @@ Membership is open to independently maintained sites with substantial spanking-r
 
 Spankscuary is built around a simple expectation of good neighbourliness. Don't harass people, deliberately send trouble toward another member site, impersonate other people, publish private information without permission, or use the ring to distribute material you do not have the right to share.
 
-Member sites also need to remain connected to the ring. If your site is listed in Spankscuary, please display the Spankscuary navigation banner or another approved link back into the ring somewhere readers can reasonably find it.
+Member sites also need to remain connected to the ring. When your site is part of Spankscuary, please make sure the Spankscuary navigation banner is visible and working somewhere readers can reasonably find it. If you’re using another approved way to link back into the ring, make sure that stays visible and working too.
 
-Otherwise, don't make our ring a horseshoe.
+A webring only works if people can keep moving around the circle. Don’t make our ring a horseshoe.
 
 Sites get redesigned. Widgets break. Hosting companies have opinions. Nobody is going to dispatch the Webring Police because a banner disappears for an afternoon. But if a member site stops linking back to Spankscuary altogether, we'll get in touch and try to sort it out. A webring only works when readers can keep travelling around it.
 
