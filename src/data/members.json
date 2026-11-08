@@ -12,5 +12,10 @@
   {
     "title": "The Treehouse Forum",
     "url": "https://discourse.thetreehouseforum.net/"
-  }
+  },
+  {
+  "title": "Leia Ann Woods",
+  "url": "https://leiaannwoods.com/",
+  "feed": "https://leiaannwoods.com/feed/"
+}
 ]
