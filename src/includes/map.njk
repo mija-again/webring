@@ -1,8 +1,10 @@
 {% set r = 170 %}
-{% set ri = 115 %}
+{% set ri = 140 %}
+{% set imageRi = 132 %}
 {% set w = 600 %}
 {% set h = 440 %}
 {% set nodes = members|mapNodes(r, w, h) %}
+
 <svg class="map {% if members|length > 10 %}map--dense{% endif %}" width="{{ w }}" height="{{ h }}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <circle cx="{{ w/2 }}" cy="{{ h/2 }}" r="{{ r }}" class="map__circle"></circle>
 
@@ -13,12 +15,12 @@
     {% if meta.image %}
         <image
             class="map__image"
-            x="{{ w/2 - ri }}"
-            y="{{ h/2 - ri }}"
+            x="{{ w/2 - imageRi }}"
+            y="{{ h/2 - imageRi }}"
             clip-path="url(#map-image-mask)"
             xlink:href="/assets/images/{{ meta.image }}"
-            width="{{ ri*2 }}"
-            height="{{ ri*2 }}"
+            width="{{ imageRi*2 }}"
+            height="{{ imageRi*2 }}"
         />
     {% else %}
         <circle cx="{{ w/2 }}" cy="{{ h/2 }}" r="{{ ri }}" class="map__center"></circle>
