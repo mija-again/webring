@@ -13,6 +13,14 @@
     </clipPath>
 
     {% if meta.image %}
+
+        <circle
+            cx="{{ w/2 }}"
+            cy="{{ h/2 }}"
+            r="{{ ri }}"
+            fill="#ffffff"
+        ></circle>
+
         <image
             class="map__image"
             x="{{ w/2 - imageRi }}"
@@ -22,6 +30,7 @@
             width="{{ imageRi*2 }}"
             height="{{ imageRi*2 }}"
         />
+
     {% else %}
         <circle cx="{{ w/2 }}" cy="{{ h/2 }}" r="{{ ri }}" class="map__center"></circle>
     {% endif %}
