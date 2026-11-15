@@ -47,7 +47,9 @@ class WebringBanner extends HTMLElement {
             border: 1px solid #d9d1c5;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(14, 30, 37, 0.12);
+            width: 100%;
             max-width: 480px;
+            overflow: hidden;
           }
 
           .webring-banner a {
@@ -65,7 +67,7 @@ class WebringBanner extends HTMLElement {
             display: flex;
             align-items: center;
             position: relative;
-            padding: 0.55rem 1rem;
+            padding: 0.75rem 1rem;
             border-bottom: 1px solid #d9d1c5;
           }
 
@@ -75,21 +77,30 @@ class WebringBanner extends HTMLElement {
             color: #2f2a27;
           }
 
+          .webring-banner__kicker {
+            margin: 0 0 0.15rem 0;
+            line-height: 1.2;
+          }
+
           .webring-banner__image {
             display: block;
-            width: 110px;
-            height: 110px;
-            flex: 0 0 110px;
+            width: 90px;
+            height: 90px;
+            flex: 0 0 90px;
             margin-right: 1rem;
             border-radius: 50%;
             object-fit: cover;
           }
 
           .webring-banner__title {
-            margin: 0.1rem 0;
-            font-size: 1.45rem;
+            margin: 0.1rem 0 0.2rem 0;
+            font-size: 1.25rem;
             font-weight: bold;
-            line-height: 1.15;
+            line-height: 1.1;
+          }
+
+          .webring-banner__count {
+            line-height: 1.25;
           }
 
           .webring-banner__info {
@@ -97,34 +108,47 @@ class WebringBanner extends HTMLElement {
             align-items: center;
             justify-content: center;
             position: absolute;
-            top: 1rem;
-            right: 1rem;
-            width: 1.25rem;
-            height: 1.25rem;
+            top: 0.85rem;
+            right: 0.85rem;
+            width: 1.35rem;
+            height: 1.35rem;
             border: 2px solid #d9d1c5;
             border-radius: 50%;
-            font-size: .75rem;
+            font-size: 0.75rem;
             color: #6f2f38;
+            background: #fffdf8;
           }
 
           .webring-banner__links {
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            gap: 0.5rem;
             padding: 0.8rem 1rem;
             margin: 0;
           }
 
           .webring-banner__link {
-            display: block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
             color: #6f2f38;
+            white-space: nowrap;
           }
 
           .webring-banner__link--random {
             text-align: center;
+            justify-content: center;
           }
 
           .webring-banner__link--next {
             text-align: right;
+            justify-content: flex-end;
+          }
+
+          .webring-banner__icon {
+            font-size: 1.1em;
+            line-height: 1;
           }
 
           @media (min-width: 400px) {
@@ -132,12 +156,43 @@ class WebringBanner extends HTMLElement {
               min-width: 100px;
             }
           }
+
+          @media (max-width: 360px) {
+            :host {
+              font-size: 17px;
+            }
+
+            .webring-banner__header {
+              padding: 0.7rem 0.8rem;
+            }
+
+            .webring-banner__image {
+              width: 72px;
+              height: 72px;
+              flex: 0 0 72px;
+              margin-right: 0.75rem;
+            }
+
+            .webring-banner__title {
+              font-size: 1.05rem;
+            }
+
+            .webring-banner__description {
+              padding-right: 1.6rem;
+            }
+
+            .webring-banner__links {
+              padding: 0.7rem 0.8rem;
+            }
+          }
         </style>
         `;
     }
 
     getTemplate() {
-        var memberWord = this.membercount === 1 ? 'member' : 'members';
+        var memberText = this.membercount === 1
+            ? '1 member so far'
+            : this.membercount + ' members so far';
 
         return `
           ${this.getStyles()}
@@ -152,7 +207,7 @@ class WebringBanner extends HTMLElement {
               />
 
               <div class="webring-banner__description">
-                <div>This site is part of</div>
+                <div class="webring-banner__kicker">Part of</div>
 
                 <h3 class="webring-banner__title">
                   <a href="${this.url}">
@@ -160,8 +215,8 @@ class WebringBanner extends HTMLElement {
                   </a>
                 </h3>
 
-                <div>
-                  A webring with ${this.membercount} ${memberWord}
+                <div class="webring-banner__count">
+                  ${memberText}
                 </div>
               </div>
 
@@ -179,19 +234,19 @@ class WebringBanner extends HTMLElement {
                 href="${this.getNavigationUrl('prev')}"
                 class="webring-banner__link"
                 aria-label="Go to previous site in the ring"
-              >⬅️ Previous</a>
+              ><span class="webring-banner__icon" aria-hidden="true">←</span><span>Previous</span></a>
 
               <a
                 href="${this.getNavigationUrl('random')}"
                 class="webring-banner__link webring-banner__link--random"
                 aria-label="Go to a random site in the ring"
-              >Random</a>
+              ><span class="webring-banner__icon" aria-hidden="true">⟳</span><span>Random</span></a>
 
               <a
                 href="${this.getNavigationUrl('next')}"
                 class="webring-banner__link webring-banner__link--next"
                 aria-label="Go to next site in the ring"
-              >Next ➡️</a>
+              ><span>Next</span><span class="webring-banner__icon" aria-hidden="true">→</span></a>
 
             </div>
           </div>
