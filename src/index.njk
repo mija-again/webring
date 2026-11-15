@@ -5,168 +5,211 @@ layout: base
 {% include 'webring.njk' %}
 
 <div class="markdown">
-    <h2>What's this?</h2>
 
-    <p>
-        The Spankscuary Webring is a hand-built neighbourhood for spanking stories,
-        art, history, humour, blogs, archives, and community. It connects independently
-        owned sites so readers can move from one to another without relying on search
-        engines, social media feeds, or recommendation algorithms.
-    </p>
+<h2>What's this?</h2>
 
-    <p>
-        <a href="https://en.wikipedia.org/wiki/Webring">Webrings</a> are an
-        <a href="https://brisray.com/web/webring-history.htm">old idea</a>
-        we're bringing back because they still solve a useful problem. Each member
-        site participates in the ring, making it possible to discover other sites
-        through people rather than platforms. There are good reasons
-        <a href="https://www.base31.org/blog/bringing-back-the-webring">webrings and blogrolls are making a comeback</a>:
-        human curation, direct connections between independent sites, and the chance
-        to stumble onto interesting things an algorithm might never show you.
-    </p>
+<p>
+    Spankscuary is a hand-built neighbourhood for spanking stories, art,
+    history, humour, and community. Everything we share leaves a mark.
+</p>
 
-    <h2>How to join</h2>
+<p>
+    It's a webring: a group of independent sites connected to one another
+    so readers can move from one to the next instead of depending entirely
+    on search engines, social-media feeds, or somebody else's platform.
+</p>
 
-    <p>
-        Spankscuary is for independently maintained sites with substantial
-        spanking-related content. Personal sites, blogs, story archives, art sites,
-        history projects, forums, and other community resources are all welcome to apply.
-        Professional and commercial sites offering spanking-related goods, services,
-        writing, art, video, or other work are welcome to apply too.
-    </p>
+<p>
+    Each member keeps their own site. Spankscuary simply provides a path
+    between them.
+</p>
 
-    <p>
-        To join Spankscuary, your site needs to be able to participate in the ring
-        itself. That means displaying the Spankscuary navigation banner, or another
-        approved version of the Previous, Random, and Next links, somewhere readers
-        can reasonably find it.
-    </p>
 
-    <p>
-        A link to the Spankscuary homepage by itself isn't enough. The point of a
-        webring is that readers can keep moving around the circle.
-    </p>
+<h2>How to join</h2>
 
-    <p>
-        Want to join? Just
-        <a href="https://mijasroom.net/contact/">email Mija</a>
-        with the name and URL of your site. I'm the person currently tending
-        Spankscuary and adding new member sites. If your site has an RSS or Atom
-        feed and you know the address, send that too. If you don't know what an
-        RSS feed is, don't worry about it. I can probably find it for you.
-    </p>
+<p>
+    Spankscuary is for independently maintained sites with substantial
+    spanking-related content. Personal sites, blogs, story archives, art sites,
+    history projects, forums, and other community resources are all welcome to apply.
+    Professional and commercial sites offering spanking-related goods, services,
+    writing, art, video, or other work are welcome to apply too.
+</p>
 
-    <p>
-        If you're comfortable with GitHub and would rather do it yourself, you can
-        also <a href="{{ meta.repo }}/compare">open a pull request</a>
-        with the name and URL of your site and, if available, its RSS or Atom feed.
-    </p>
+<p>
+    To join Spankscuary, your site needs to be able to participate in the ring
+    itself. That means displaying the Spankscuary navigation banner, or another
+    approved version of the Previous, Random, and Next links, somewhere readers
+    can reasonably find it.
+</p>
 
-    <p>
-        When your site has been added to Spankscuary, I'll let you know and send
-        you the banner code to add to your site.
-    </p>
+<p>
+    A link to the Spankscuary homepage by itself isn't enough. The point of a
+    webring is that readers can keep moving around the circle.
+</p>
 
-    <p>
-        Before joining, please also have a look at the
-        <a href="/code-of-conduct">Code of Conduct</a>. It's there to help keep
-        Spankscuary a welcoming, useful neighbourhood rather than to make joining
-        complicated.
-    </p>
+<p>
+    Want to join? Just
+    <a href="https://mijasroom.net/contact/">email Mija</a>
+    with the name and URL of your site. I'm the person currently tending
+    Spankscuary and adding new member sites. If your site has an RSS or Atom
+    feed and you know the address, send that too. If you don't know what an
+    RSS feed is, don't worry about it. I can probably find it for you.
+</p>
 
-    <h2>Add the banner</h2>
+<p>
+    If you're comfortable with GitHub and would rather do it yourself, you can
+    also <a href="{{ meta.repo }}/compare">open a pull request</a>
+    with the name and URL of your site and, if available, its RSS or Atom feed.
+</p>
 
-    <p>
-        Once your site has joined the ring, copy only the code in the box below
-        and add it to your site:
-    </p>
+<p>
+    Before joining, please also have a look at the
+    <a href="/code-of-conduct">Code of Conduct</a>. It's there to help keep
+    Spankscuary a welcoming, useful neighbourhood rather than to make joining
+    complicated.
+</p>
 
-    {% highlight 'html' %}{% include 'snippet.njk' %}{% endhighlight %}
 
-    <p>
-        It will display the Spankscuary navigation banner linking your site to its
-        neighbours in the ring:
-    </p>
+<h2>Add the banner</h2>
 
-    {% include 'snippet.njk' %}
+<p>
+    Once your site has joined the ring, choose whichever version fits your site
+    best. Both versions contain the same Previous, Random, and Next navigation.
+</p>
 
-    <h3>WordPress</h3>
 
-    <p>
-        Once you've received confirmation that your site has been added to the
-        Spankscuary member list, decide where you'd like the banner to appear.
-    </p>
+<h3>Standard banner</h3>
 
-    <p>
-        In WordPress, edit the page, sidebar, footer, or widget area where you'd like
-        the banner to appear. Add a
-        <code class="ui-label">&lt;Custom HTML&gt;</code>
-        block or widget, then paste in the banner code shown above.
-    </p>
+<p>
+    Best for pages, footers, and wider spaces.
+</p>
 
-    <p>
-        Save or update the page, then test
-        <code class="ui-label">&lt;Previous&gt;</code>,
-        <code class="ui-label">&lt;Random&gt;</code>, and
-        <code class="ui-label">&lt;Next&gt;</code>.
-        The banner identifies your site automatically, so you don't need to edit
-        the links when new members join the ring.
-    </p>
+<p>
+    Copy the code in the box below and add it to your site:
+</p>
 
-    <p>
-        Put it somewhere readers can find it. A sidebar or footer is a good choice,
-        but the bottom of a homepage works too.
-    </p>
+{% highlight 'html' %}{% include 'snippet.njk' %}{% endhighlight %}
 
-    <h3>Blogger</h3>
+<p>
+    It will look like this:
+</p>
 
-    <p>
-        Once you've received confirmation that your site has been added to the
-        Spankscuary member list, decide where you'd like the banner to appear.
-    </p>
+{% include 'snippet.njk' %}
 
-    <p>
-        In Blogger, open your blog dashboard and choose
-        <code class="ui-label">&lt;Layout&gt;</code>.
-        In the sidebar, footer, or other area where you'd like the banner to appear,
-        click <code class="ui-label">&lt;Add a Gadget&gt;</code>, then choose
-        <code class="ui-label">&lt;HTML/JavaScript&gt;</code>.
-    </p>
 
-    <p>
-        Leave the title blank unless you'd like to give the gadget a title. Paste
-        the Spankscuary banner code shown above into the
-        <code class="ui-label">&lt;Content&gt;</code> box, then save it.
-    </p>
+<h3>Compact/sidebar banner</h3>
 
-    <p>
-        You can move the gadget to another part of the page by dragging it in the
-        <code class="ui-label">&lt;Layout&gt;</code> screen. Put it somewhere readers
-        can reasonably find it.
-    </p>
+<p>
+    Best for narrow blog sidebars and smaller widget areas. It uses the same
+    Spankscuary navigation, rearranged to fit comfortably in a narrower column.
+</p>
 
-    <p>
-        Visit your blog and test
-        <code class="ui-label">&lt;Previous&gt;</code>,
-        <code class="ui-label">&lt;Random&gt;</code>, and
-        <code class="ui-label">&lt;Next&gt;</code>.
-        The banner identifies your site automatically, so you don't need to edit
-        the links when new members join the ring.
-    </p>
+<p>
+    Copy this version instead:
+</p>
 
-    <p>
-        If the banner doesn't display correctly,
-        <a href="https://mijasroom.net/contact/">email Mija</a>
-        and I'll help figure it out.
-    </p>
+{% highlight 'html' %}{% include 'snippet-compact.njk' %}{% endhighlight %}
 
-    <hr class="site-credit-rule">
+<p>
+    It will look like this:
+</p>
 
-    <p class="site-credit">
-        <em>
-            <a href="{{ meta.url }}">Spankscuary</a> is built from
-            <a href="https://github.com/maxboeck/webring">Max Böck's Webring Starter Kit</a>.
-            Thank you, Max!
-        </em>
-    </p>
+<webring-banner compact></webring-banner>
+
+
+<h2>Adding it to your site</h2>
+
+
+<h3>WordPress</h3>
+
+<p>
+    Once you've received confirmation that your site has been added to the
+    Spankscuary member list, decide where you'd like the banner to appear.
+</p>
+
+<p>
+    In WordPress, edit the page, sidebar, footer, or widget area where you'd like
+    the banner to appear. Add a
+    <code class="ui-label">&lt;Custom HTML&gt;</code>
+    block or widget, then paste in the banner code shown above.
+</p>
+
+<p>
+    If you're putting it in a narrow sidebar, the compact/sidebar version will
+    usually fit better. For a wider page or footer, use the standard version.
+</p>
+
+<p>
+    Save or update the page, then test
+    <code class="ui-label">&lt;Previous&gt;</code>,
+    <code class="ui-label">&lt;Random&gt;</code>, and
+    <code class="ui-label">&lt;Next&gt;</code>.
+    The banner identifies your site automatically, so you don't need to edit
+    the links when new members join the ring.
+</p>
+
+<p>
+    Put it somewhere readers can find it. A sidebar or footer is a good choice,
+    but the bottom of a homepage works too.
+</p>
+
+
+<h3>Blogger</h3>
+
+<p>
+    Once you've received confirmation that your site has been added to the
+    Spankscuary member list, decide where you'd like the banner to appear.
+</p>
+
+<p>
+    In Blogger, open your blog dashboard and choose
+    <code class="ui-label">&lt;Layout&gt;</code>.
+    In the sidebar, footer, or other area where you'd like the banner to appear,
+    click <code class="ui-label">&lt;Add a Gadget&gt;</code>, then choose
+    <code class="ui-label">&lt;HTML/JavaScript&gt;</code>.
+</p>
+
+<p>
+    Leave the title blank unless you'd like to give the gadget a title. Paste
+    the Spankscuary banner code shown above into the
+    <code class="ui-label">&lt;Content&gt;</code> box, then save it.
+</p>
+
+<p>
+    For a typical Blogger sidebar, the compact/sidebar version will usually
+    work better than the standard banner.
+</p>
+
+<p>
+    You can move the gadget to another part of the page by dragging it in the
+    <code class="ui-label">&lt;Layout&gt;</code> screen. Put it somewhere readers
+    can reasonably find it.
+</p>
+
+<p>
+    Visit your blog and test
+    <code class="ui-label">&lt;Previous&gt;</code>,
+    <code class="ui-label">&lt;Random&gt;</code>, and
+    <code class="ui-label">&lt;Next&gt;</code>.
+    The banner identifies your site automatically, so you don't need to edit
+    the links when new members join the ring.
+</p>
+
+<p>
+    If the banner doesn't display correctly,
+    <a href="https://mijasroom.net/contact/">email Mija</a>
+    and I'll help figure it out.
+</p>
+
+
+<hr>
+
+<p>
+    <em>
+        <a href="{{ meta.url }}">Spankscuary</a>
+        is built from the open-source webring starter kit created by
+        <a href="https://mxb.dev/">Max Böck</a>.
+    </em>
+</p>
+
 </div>
