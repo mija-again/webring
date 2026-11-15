@@ -139,6 +139,10 @@ class WebringBanner extends HTMLElement {
             white-space: nowrap;
           }
 
+          .webring-banner__link--prev {
+            justify-self: start;
+          }
+
           .webring-banner__link--random {
             justify-self: center;
           }
@@ -155,6 +159,79 @@ class WebringBanner extends HTMLElement {
           .webring-banner__link--random .webring-banner__icon {
             font-size: 1.4em;
           }
+
+
+          /* COMPACT / SIDEBAR VERSION */
+
+          :host([compact]) .webring-banner {
+            max-width: 300px;
+          }
+
+          :host([compact]) .webring-banner__header {
+            flex-direction: column;
+            text-align: center;
+            padding: 1rem 0.9rem 0.9rem;
+          }
+
+          :host([compact]) .webring-banner__image {
+            width: 100px;
+            height: 100px;
+            flex: 0 0 100px;
+            margin: 0 0 0.65rem 0;
+          }
+
+          :host([compact]) .webring-banner__description {
+            width: 100%;
+            padding-right: 0;
+          }
+
+          :host([compact]) .webring-banner__kicker {
+            margin-bottom: 0.15rem;
+          }
+
+          :host([compact]) .webring-banner__title {
+            margin: 0.1rem auto 0.3rem;
+            font-size: 1.2rem;
+            line-height: 1.12;
+          }
+
+          :host([compact]) .webring-banner__count {
+            margin-bottom: 0.1rem;
+          }
+
+          :host([compact]) .webring-banner__info {
+            top: 0.65rem;
+            right: 0.65rem;
+          }
+
+          :host([compact]) .webring-banner__links {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-rows: auto auto;
+            column-gap: 0.5rem;
+            row-gap: 0.65rem;
+            padding: 0.8rem 1rem 0.9rem;
+          }
+
+          :host([compact]) .webring-banner__link--prev {
+            grid-column: 1;
+            grid-row: 1;
+            justify-self: start;
+          }
+
+          :host([compact]) .webring-banner__link--next {
+            grid-column: 2;
+            grid-row: 1;
+            justify-self: end;
+          }
+
+          :host([compact]) .webring-banner__link--random {
+            grid-column: 1 / -1;
+            grid-row: 2;
+            justify-self: center;
+          }
+
+
+          /* EXTRA HELP FOR VERY NARROW SPACES */
 
           @media (max-width: 360px) {
             :host {
@@ -187,6 +264,30 @@ class WebringBanner extends HTMLElement {
 
             .webring-banner__link {
               gap: 0.2rem;
+            }
+
+            :host([compact]) .webring-banner__header {
+              padding: 0.9rem 0.75rem 0.8rem;
+            }
+
+            :host([compact]) .webring-banner__image {
+              width: 90px;
+              height: 90px;
+              flex: 0 0 90px;
+              margin: 0 0 0.6rem 0;
+            }
+
+            :host([compact]) .webring-banner__description {
+              padding-right: 0;
+            }
+
+            :host([compact]) .webring-banner__title {
+              font-size: 1.1rem;
+            }
+
+            :host([compact]) .webring-banner__links {
+              padding: 0.75rem 0.8rem 0.85rem;
+              row-gap: 0.55rem;
             }
           }
         </style>
@@ -236,7 +337,7 @@ class WebringBanner extends HTMLElement {
 
               <a
                 href="${this.getNavigationUrl('prev')}"
-                class="webring-banner__link"
+                class="webring-banner__link webring-banner__link--prev"
                 aria-label="Go to previous site in the ring"
               >
                 <span class="webring-banner__icon" aria-hidden="true">←</span>
