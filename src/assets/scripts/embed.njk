@@ -73,6 +73,7 @@ class WebringBanner extends HTMLElement {
 
           .webring-banner__description {
             flex: 1;
+            min-width: 0;
             padding-right: 2rem;
             color: #2f2a27;
           }
@@ -97,6 +98,7 @@ class WebringBanner extends HTMLElement {
             font-size: 1.25rem;
             font-weight: bold;
             line-height: 1.1;
+            overflow-wrap: break-word;
           }
 
           .webring-banner__count {
@@ -120,10 +122,10 @@ class WebringBanner extends HTMLElement {
           }
 
           .webring-banner__links {
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.25rem;
             padding: 0.8rem 1rem;
             margin: 0;
           }
@@ -132,18 +134,17 @@ class WebringBanner extends HTMLElement {
             display: inline-flex;
             align-items: center;
             gap: 0.35rem;
+            min-width: 0;
             color: #6f2f38;
             white-space: nowrap;
           }
 
           .webring-banner__link--random {
-            text-align: center;
-            justify-content: center;
+            justify-self: center;
           }
 
           .webring-banner__link--next {
-            text-align: right;
-            justify-content: flex-end;
+            justify-self: end;
           }
 
           .webring-banner__icon {
@@ -153,12 +154,6 @@ class WebringBanner extends HTMLElement {
 
           .webring-banner__link--random .webring-banner__icon {
             font-size: 1.4em;
-          }
-
-          @media (min-width: 400px) {
-            .webring-banner__link {
-              min-width: 100px;
-            }
           }
 
           @media (max-width: 360px) {
@@ -187,6 +182,11 @@ class WebringBanner extends HTMLElement {
 
             .webring-banner__links {
               padding: 0.7rem 0.8rem;
+              gap: 0.15rem;
+            }
+
+            .webring-banner__link {
+              gap: 0.2rem;
             }
           }
         </style>
@@ -238,19 +238,28 @@ class WebringBanner extends HTMLElement {
                 href="${this.getNavigationUrl('prev')}"
                 class="webring-banner__link"
                 aria-label="Go to previous site in the ring"
-              ><span class="webring-banner__icon" aria-hidden="true">←</span><span>Previous</span></a>
+              >
+                <span class="webring-banner__icon" aria-hidden="true">←</span>
+                <span>Previous</span>
+              </a>
 
               <a
                 href="${this.getNavigationUrl('random')}"
                 class="webring-banner__link webring-banner__link--random"
                 aria-label="Go to a random site in the ring"
-              ><span class="webring-banner__icon" aria-hidden="true">⟳</span><span>Random</span></a>
+              >
+                <span class="webring-banner__icon" aria-hidden="true">⟳</span>
+                <span>Random</span>
+              </a>
 
               <a
                 href="${this.getNavigationUrl('next')}"
                 class="webring-banner__link webring-banner__link--next"
                 aria-label="Go to next site in the ring"
-              ><span>Next</span><span class="webring-banner__icon" aria-hidden="true">→</span></a>
+              >
+                <span>Next</span>
+                <span class="webring-banner__icon" aria-hidden="true">→</span>
+              </a>
 
             </div>
           </div>
